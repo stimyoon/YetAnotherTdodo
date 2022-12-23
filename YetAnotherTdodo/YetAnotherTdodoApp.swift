@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct YetAnotherTdodoApp: App {
+    @StateObject var categoryListVM = CategoryListVM()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CategoryListView(categoryListVM: categoryListVM)
         }
     }
 }
