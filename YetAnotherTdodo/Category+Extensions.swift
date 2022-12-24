@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Category {
+extension Category: CategoryValuesProtocol {
     var name: String {
         get{ name_ ?? "" }
         set{ name_ = newValue}
@@ -16,20 +16,12 @@ extension Category {
         get{ imageName_ ?? "" }
         set{ imageName_ = newValue }
     }
-    var dueDate: Date {
-        get{ dueDate_ ?? Date() }
-        set{ dueDate_ = newValue}
-    }
     func setValues(name: String, imageName: String, dueDate: Date, isDone: Bool){
         self.name = name
         self.imageName = imageName
-        self.dueDate = dueDate
-        self.isDone = isDone
     }
-    func setValue(values: CategoryValues) {
+    func setValue(values: any CategoryValuesProtocol) {
         self.name = values.name
         self.imageName = values.imageName
-        self.dueDate = values.dueDate
-        self.isDone = values.isDone
     }
 }

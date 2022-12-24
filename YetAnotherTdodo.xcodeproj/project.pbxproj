@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9131D74D295605A700370FCA /* sf symbol list.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9131D74C295605A700370FCA /* sf symbol list.csv */; };
+		9131D7512956079200370FCA /* SFSymbolListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131D7502956079200370FCA /* SFSymbolListView.swift */; };
+		9131D7532956102200370FCA /* EmojiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131D7522956102200370FCA /* EmojiListView.swift */; };
+		9131D75529561AA100370FCA /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131D75429561AA100370FCA /* ColorPicker.swift */; };
 		916152C629553A7300061257 /* YetAnotherTdodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916152C529553A7300061257 /* YetAnotherTdodoApp.swift */; };
 		916152C829553A7300061257 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916152C729553A7300061257 /* ContentView.swift */; };
 		916152CA29553A7400061257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916152C929553A7400061257 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9131D74C295605A700370FCA /* sf symbol list.csv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf symbol list.csv"; sourceTree = SOURCE_ROOT; };
+		9131D7502956079200370FCA /* SFSymbolListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolListView.swift; sourceTree = "<group>"; };
+		9131D7522956102200370FCA /* EmojiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListView.swift; sourceTree = "<group>"; };
+		9131D75429561AA100370FCA /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		916152C229553A7300061257 /* YetAnotherTdodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherTdodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916152C529553A7300061257 /* YetAnotherTdodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherTdodoApp.swift; sourceTree = "<group>"; };
 		916152C729553A7300061257 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,10 +124,14 @@
 				916152FC29553B8800061257 /* CategoryListView.swift */,
 				916153002955B44100061257 /* View+extensions.swift */,
 				916152FE29553DEE00061257 /* Category+Extensions.swift */,
+				9131D74C295605A700370FCA /* sf symbol list.csv */,
+				9131D7502956079200370FCA /* SFSymbolListView.swift */,
+				9131D7522956102200370FCA /* EmojiListView.swift */,
 				916152C729553A7300061257 /* ContentView.swift */,
 				916152C929553A7400061257 /* Assets.xcassets */,
 				916152CB29553A7400061257 /* YetAnotherTdodo.entitlements */,
 				916152CC29553A7400061257 /* Preview Content */,
+				9131D75429561AA100370FCA /* ColorPicker.swift */,
 			);
 			path = YetAnotherTdodo;
 			sourceTree = "<group>";
@@ -265,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9131D74D295605A700370FCA /* sf symbol list.csv in Resources */,
 				916152CE29553A7400061257 /* Preview Assets.xcassets in Resources */,
 				916152CA29553A7400061257 /* Assets.xcassets in Resources */,
 			);
@@ -292,6 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				916152FF29553DEE00061257 /* Category+Extensions.swift in Sources */,
+				9131D75529561AA100370FCA /* ColorPicker.swift in Sources */,
+				9131D7532956102200370FCA /* EmojiListView.swift in Sources */,
 				916152F429553AC600061257 /* Persistence.swift in Sources */,
 				916152FB29553B6700061257 /* ListVM.swift in Sources */,
 				916152F529553AC600061257 /* DataserviceProtocol.swift in Sources */,
@@ -301,6 +316,7 @@
 				916152C829553A7300061257 /* ContentView.swift in Sources */,
 				916152FD29553B8800061257 /* CategoryListView.swift in Sources */,
 				916152C629553A7300061257 /* YetAnotherTdodoApp.swift in Sources */,
+				9131D7512956079200370FCA /* SFSymbolListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,6 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

@@ -75,14 +75,10 @@ struct CategoryValues {
     init(category: Category) {
         self.name = category.name
         self.imageName = category.imageName
-        self.dueDate = category.dueDate
-        self.isDone = category.isDone
     }
     init(name: String="", imageName: String="", dueDate: Date=Date(), isDone: Bool=false) {
         self.name = name
         self.imageName = imageName
-        self.dueDate = dueDate
-        self.isDone = isDone
     }
 }
 class CategoryListVM: ListVM<Category> {
@@ -95,18 +91,16 @@ class CategoryListVM: ListVM<Category> {
         saveAll()
         return category
     }
-    func createCategory(with values: CategoryValues) {
+    func createCategory(with values: any CategoryValuesProtocol) {
         let category = super.create()
         category.listOrder = categories.count
         setValue(of: category, with: values)
         saveAll()
     }
     
-    func setValue(of category: Category, with categoryValues: CategoryValues){
+    func setValue(of category: Category, with categoryValues: any CategoryValuesProtocol){
         category.name = categoryValues.name
         category.imageName = categoryValues.imageName
-        category.dueDate = categoryValues.dueDate
-        category.isDone = categoryValues.isDone
     }
     
     

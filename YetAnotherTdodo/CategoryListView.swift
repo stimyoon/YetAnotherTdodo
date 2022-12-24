@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+protocol CategoryValuesProtocol {
+    var name : String { set get }
+    var imageName : String { set get }
+}
+extension CategoryValues: CategoryValuesProtocol {}
 
 struct CategoryEditView: View {
-    @State var category: CategoryValues
-    var save: (CategoryValues) -> ()
+    @State var category: any CategoryValuesProtocol
+    var save: (any CategoryValuesProtocol) -> ()
     
     
     @Environment(\.dismiss) var dismiss
@@ -65,9 +70,8 @@ struct CategoryListView: View {
             List{
                 ForEach(categoryListVM.categories){ category in
                     NavigationLink {
-                        CategoryEditView(category: CategoryValues(category: category)) { values in
-                            category.setValue(values: values)
-                            categoryListVM.update(category)
+                        CategoryEditView(category: category) { editedCategory in
+                            categoryListVM.update(editedCategory as! Category)
                         }
                     } label: {
                         CategoryRowView(category: category)
@@ -82,15 +86,18 @@ struct CategoryListView: View {
             }
         }
     }
-    private func create(values: CategoryValues) {
+    private func create(values: any CategoryValuesProtocol) {
         categoryListVM.createCategory(with: values)
     }
 
     var toolbarItems: some ToolbarContent {
         Group{
+            #if os(iOS)
             ToolbarItem(placement: .status) {
                 EditButton()
             }
+            #endif
+            
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     isShowingCategoryEditSheet = true
